@@ -17,7 +17,46 @@ h4 {
     font-weight: 300;
     color: #606770;
     margin-top: 0;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem; /* Reduced margin to make space for the new nav margin */
+}
+
+/* --- Cool Menu Bar Styles --- */
+nav {
+    display: inline-block; /* Allows the nav to be centered by the body's text-align */
+    background: #ffffff;
+    border-radius: 50px; /* Creates the outer pill shape */
+    padding: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 3rem; /* Adds space below the navigation */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Aligns menu items horizontally */
+}
+
+nav a {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    text-decoration: none;
+    color: #606770;
+    font-weight: 500;
+    border-radius: 50px; /* Makes each link item a pill */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #f0f2f5; /* A subtle hover effect that matches the body background */
+    color: #1c1e21; /* Darker text on hover for better contrast */
+}
+
+/* Style for the currently active page link */
+nav a.active {
+    background-color: #1c1e21; /* Dark background to highlight */
+    color: #ffffff; /* White text for contrast */
+    cursor: default;
 }
 
 .project-grid {
@@ -47,9 +86,25 @@ h4 {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
-.project-card img {
-    height: 200px;
+.card-header {
+    display: flex;
+    align-items: center; /* Vertically aligns the image and title */
+    padding: 1rem 1.5rem;
     border-bottom: 1px solid #e0e0e0;
+}
+
+.card-header img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-right: 1rem; /* Adds space between the image and the title */
+    border-radius: 15px;
+    background-color: #f8f9fa; /* A light background for any empty space around the image */
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
 }
 
 .card-content {
@@ -57,10 +112,6 @@ h4 {
     display: flex;
     flex-direction: column;
     flex-grow: 1; /* This makes all cards in a row have the same height */
-}
-
-.card-content h3 {
-    margin: 0 0 0.5rem 0;
 }
 
 .card-content p {
