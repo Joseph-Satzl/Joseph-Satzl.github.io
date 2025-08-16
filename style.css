@@ -1,0 +1,73 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #1c1e21;
+    margin: 0;
+    padding: 2rem;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #606770;
+    margin-top: 0;
+    margin-bottom: 3rem;
+}
+
+.project-grid {
+    display: grid;
+    /* This creates responsive columns. On small screens, 1 column. On larger screens, as many 300px columns as fit. */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.project-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensures the image corners are rounded */
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.card-content {
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* This makes all cards in a row have the same height */
+}
+
+.card-content h3 {
+    margin: 0 0 0.5rem 0;
+}
+
+.card-content p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #606770;
+}
