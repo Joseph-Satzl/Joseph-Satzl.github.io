@@ -20,6 +20,28 @@ h4 {
     margin-bottom: 1.5rem; /* Reduced margin to make space for the new nav margin */
 }
 
+.about p {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #e5e5e5;
+} 
+
+.about {
+    max-width: 500px;
+    margin: auto;
+    padding: 1.5rem;
+    text-align: center;
+    background-color:#202020;
+    border-radius: 15px;
+}
+
+strong {
+    font-weight: bold;
+}
+
+
+
 /* --- Cool Menu Bar Styles --- */
 nav {
     display: inline-block; /* Allows the nav to be centered by the body's text-align */
@@ -39,7 +61,7 @@ nav ul {
 
 nav a {
     display: block;
-    padding: 0.75rem 1.25rem;
+    padding: 0.75rem 1.5rem;
     text-decoration: none;
     color: #606770;
     font-weight: 500;
