@@ -42,7 +42,7 @@ strong {
 
 
 
-/* --- Cool Menu Bar Styles --- */
+
 nav {
     display: inline-block; /* Allows the nav to be centered by the body's text-align */
     background: #ffffff;
@@ -74,7 +74,7 @@ nav a:hover {
     color: #1c1e21; /* Darker text on hover for better contrast */
 }
 
-/* Style for the currently active page link */
+
 nav a.active {
     background-color: #1c1e21; /* Dark background to highlight */
     color: #ffffff; /* White text for contrast */
@@ -93,9 +93,9 @@ nav a.active {
 
 .project-card {
     background: #ffffff;
-    border-radius: 15px;
+    border-radius: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Ensures the image corners are rounded */
+    overflow: hidden; 
     text-decoration: none;
     color: inherit;
     display: flex;
@@ -110,7 +110,7 @@ nav a.active {
 
 .card-header {
     display: flex;
-    align-items: center; /* Vertically aligns the image and title */
+    align-items: center; 
     padding: 1rem 1.5rem;
     border-bottom: 1px solid #e0e0e0;
 }
@@ -119,9 +119,9 @@ nav a.active {
     width: 60px;
     height: 60px;
     object-fit: contain;
-    margin-right: 1rem; /* Adds space between the image and the title */
+    margin-right: 1rem; 
     border-radius: 15px;
-    background-color: #f8f9fa; /* A light background for any empty space around the image */
+    background-color: #f8f9fa; 
 }
 
 .card-header h3 {
