@@ -1,127 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg: #f4f2ee;
+    --bg-strong: #ece8e2;
+    --ink: #171717;
+    --muted: #202020;
+    --accent: #00655e;
+    --accent-soft: rgba(27, 77, 62, 0.164);
+    --card: #ffffff;
+    --shadow: 0 20px 50px rgba(17, 17, 17, 0.08);
+    --radius-lg: 24px;
+    --radius-md: 16px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f0f2f5;
-    color: #1c1e21;
     margin: 0;
-    padding: 2rem;
-    text-align: center;
+    font-family: "Space Grotesk", "Segoe UI", sans-serif;
+    background: radial-gradient(circle at top, #ffffff 0%, var(--bg) 45%, var(--bg-strong) 100%);
+    color: var(--ink);
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(27, 77, 62, 0.08), transparent 45%),
+        radial-gradient(circle at 20% 20%, rgba(27, 77, 62, 0.08), transparent 55%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.page-shell {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3.5rem 1.75rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    opacity: 0;
+    transform: translateY(16px);
+    animation: pageIn 0.6s ease forwards;
+}
+
+body.is-leaving .page-shell {
+    animation: pageOut 0.25s ease forwards;
+}
+
+.hero {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1.5rem;
 }
 
 h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    font-family: "Crimson Pro", "Times New Roman", serif;
+    font-size: clamp(2.6rem, 4vw, 3.6rem);
+    margin: 0 0 0.25rem;
+    letter-spacing: -0.02em;
 }
 
-h4 {
-    font-size: 1.2rem;
-    font-weight: 300;
-    color: #606770;
-    margin-top: 0;
-    margin-bottom: 1.5rem; /* Reduced margin to make space for the new nav margin */
+.subtitle {
+    margin: 0;
+    font-size: 1.05rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
 }
-
-.about p {
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1.1rem;
-    font-weight: 300;
-    color: #e5e5e5;
-} 
-
-.about {
-    max-width: 500px;
-    margin: auto;
-    padding: 1.5rem;
-    text-align: center;
-    background-color:#202020;
-    border-radius: 15px;
-}
-
-strong {
-    font-weight: bold;
-}
-
-
-
 
 nav {
-    display: inline-block; /* Allows the nav to be centered by the body's text-align */
-    background: #ffffff;
-    border-radius: 50px; /* Creates the outer pill shape */
-    padding: 0.5rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    margin-bottom: 3rem; /* Adds space below the navigation */
+    align-self: flex-start;
+    background: var(--card);
+    border-radius: 999px;
+    padding: 0.4rem;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex; /* Aligns menu items horizontally */
+    display: flex;
+    gap: 0.35rem;
 }
 
 nav a {
     display: block;
-    padding: 0.75rem 1.5rem;
+    padding: 0.7rem 1.6rem;
     text-decoration: none;
-    color: #606770;
-    font-weight: 500;
-    border-radius: 50px; /* Makes each link item a pill */
-    transition: background-color 0.3s ease, color 0.3s ease;
+    color: var(--muted);
+    font-weight: 600;
+    border-radius: 999px;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 nav a:hover {
-    background-color: #f0f2f5; /* A subtle hover effect that matches the body background */
-    color: #1c1e21; /* Darker text on hover for better contrast */
+    background-color: var(--accent-soft);
+    color: var(--accent);
+    transform: translateY(-1px);
 }
 
-
 nav a.active {
-    background-color: #1c1e21; /* Dark background to highlight */
-    color: #ffffff; /* White text for contrast */
+    background-color: var(--accent);
+    color: #ffffff;
     cursor: default;
+    box-shadow: 0 8px 20px rgba(27, 77, 62, 0.28);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.section-title {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+}
+
+.about-card {
+    background: var(--card);
+    border-radius: var(--radius-lg);
+    padding: 2.2rem;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    max-width: 680px;
+    animation: floatIn 0.6s ease 0.2s forwards;
+    opacity: 0;
+    transform: translateY(12px);
+}
+
+.lead {
+    font-size: 1.12rem;
+    line-height: 1.75;
+    color: var(--ink);
+    margin: 0;
+}
+
+strong {
+    color: var(--accent);
 }
 
 .project-grid {
     display: grid;
-    /* This creates responsive columns. On small screens, 1 column. On larger screens, as many 300px columns as fit. */
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: left;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.75rem;
 }
 
 .project-card {
-    background: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    overflow: hidden; 
+    background: var(--card);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow);
     text-decoration: none;
     color: inherit;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    opacity: 0;
+    animation: cardIn 0.5s ease forwards;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transform: scale(1.5);
+    box-shadow: 0 22px 40px rgba(17, 17, 17, 0.14);
 }
+
+.project-card:nth-child(1) { animation-delay: 0.05s; }
+.project-card:nth-child(2) { animation-delay: 0.1s; }
+.project-card:nth-child(3) { animation-delay: 0.15s; }
+.project-card:nth-child(4) { animation-delay: 0.2s; }
+.project-card:nth-child(5) { animation-delay: 0.25s; }
+.project-card:nth-child(6) { animation-delay: 0.3s; }
+
 
 .card-header {
     display: flex;
-    align-items: center; 
-    padding: 1rem 1.5rem;
-    border-bottom: 1px solid #e0e0e0;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 1.4rem 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .card-header img {
-    width: 60px;
-    height: 60px;
+    width: 64px;
+    height: 64px;
     object-fit: contain;
-    margin-right: 1rem; 
     border-radius: 15px;
-    background-color: #f8f9fa; 
+    background: #f6f3ef;
 }
 
 .card-header h3 {
@@ -130,15 +207,95 @@ nav a.active {
 }
 
 .card-content {
-    padding: 1rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1; /* This makes all cards in a row have the same height */
+    padding: 1rem 1.4rem 1.4rem;
+    flex: 1;
 }
 
 .card-content p {
     margin: 0;
-    font-size: 0.95rem;
+    font-size: 0.98rem;
     line-height: 1.5;
-    color: #606770;
+    color: var(--muted);
+}
+
+@keyframes pageIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pageOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes cardIn {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 720px) {
+    .page-shell {
+        padding: 2.5rem 1.25rem 3rem;
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        align-self: stretch;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    nav a {
+        text-align: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .page-shell,
+    .about-card,
+    .project-card {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    nav a {
+        transition: none;
+    }
 }

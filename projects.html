@@ -9,77 +9,96 @@
         <link rel="stylesheet" href="style.css">
         <link rel="icon" type="image" src="1.png">
     </head>
-    <body>
-        <h1>Joseph Satzl</h1>
-        <h4>Developer Site &amp; Projects</h4>
+    <body class="page">
+        <div class="page-shell">
+            <header class="hero">
+                <div>
+                    <h1>Joseph Satzl</h1>
+                    <p class="subtitle">Developer Site &amp; Projects</p>
+                </div>
+            </header>
 
-        <nav>
-            <ul>
-                <li><a href="index.html">About Me</a></li>
-                <li><a href="projects.html" class="active">Projects</a></li>
+            <nav>
+                <ul>
+                    <li><a href="index.html">About Me</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                </ul>
+            </nav>
 
-            </ul>
-        </nav>
-
-        <main>
-            <h2>Projects</h2>
+            <main class="content">
+                <h2 class="section-title">Projects</h2>
     
-            <div class="project-grid">
-                <a href="https://www.reywa.co" class="project-card" target="_blank" rel="noopener noreferrer">
-                    <div class="card-header">
-                        <img src="Reywa_Logo.png" alt="Reywa Logo">
-                        <h3>Reywa</h3>
-                    </div>
-                    <div class="card-content">
-                        <p>A smart global price and product comparison platform.</p>
-                    </div>
-                </a>
-                <a href="https://github.com/AlphaPatchAI/AlphaPatch" class="project-card" target="_blank" rel="noopener noreferrer">
-                    <div class="card-header">
-                        <img src="alpha-patch-logo.png" alt="Alpha Patch Logo">
-                        <h3>Alpha Patch</h3>
-                    </div>
-                    <div class="card-content">
-                        <p>AI-powered GitHub assistant that analyzes issues and proposes code fixes automatically.</p>
-                    </div>
-                </a>
-                <a href="https://apps.apple.com/de/app/metronome-tuner/id6748554438?l=en-GB" class="project-card" target="_blank" rel="noopener noreferrer">
-                    <div class="card-header">
-                        <img src="metronome-and-tuner.png" alt="Metronome App Screenshot">
-                        <h3>Metronome &amp; Tuner</h3>
-                    </div>
-                    <div class="card-content">
-                        <p>A simple and easy-to-use metronome and tuner for musicians, available on the App Store.</p>
-                    </div>
-                </a>
-                <a href="https://mymovieadvisor.com" class="project-card" target="_blank" rel="noopener noreferrer">
-                    <div class="card-header">
-                        <img src="https://mymovieadvisor.com/favicon.ico" alt="MyMovieAdvisor Logo">
-                        <h3>MyMovieAdvisor</h3>
-                    </div>
-                    <div class="card-content">
-                        <p>A Movie Recommendation Website</p>
-                    </div>
-                </a>
-                <a href="https://github.com/Joseph-Satzl/python-adaline" class="project-card" target="_blank" rel="noopener noreferrer">
-                    <div class="card-header">
-                        <img src="1.png" alt="Developer Logo">
-                        <h3>Adaline Neural Network</h3>
-                    </div>
-                    <div class="card-content">
-                        <p>An Adaline Neural Network trained on the Pima Indian dataset.</p>
-                    </div>
-                </a>
-                <a href="https://apps.apple.com/us/app/peezy-toilet-finder/id6752252500" class="project-card" target="_blank" rel="noopener noreferrer">
-                    <div class="card-header">
-                        <img src="Toilet-Finder-Icon.png" alt="Developer Logo">
-                        <h3>Toilet Finder</h3>
-                    </div>
-                    <div class="card-content">
-                        <p>A toilet finder app, available on the App Store.</p>
-                    </div>
-                </a>
-            </div>
-        </main>
+                <div class="project-grid">
+                    <a href="https://www.reywa.co" class="project-card" target="_blank" rel="noopener noreferrer">
+                        <div class="card-header">
+                            <img src="Reywa_Logo.png" alt="Reywa Logo">
+                            <h3>Reywa</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>A smart global price and product comparison platform.</p>
+                        </div>
+                    </a>
+                    <a href="https://github.com/AlphaPatchAI/AlphaPatch" class="project-card" target="_blank" rel="noopener noreferrer">
+                        <div class="card-header">
+                            <img src="alpha-patch-logo.png" alt="Alpha Patch Logo">
+                            <h3>Alpha Patch</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>AI-powered GitHub assistant that analyzes issues and proposes code fixes automatically.</p>
+                        </div>
+                    </a>
+                    <a href="https://apps.apple.com/de/app/metronome-tuner/id6748554438?l=en-GB" class="project-card" target="_blank" rel="noopener noreferrer">
+                        <div class="card-header">
+                            <img src="metronome-and-tuner.png" alt="Metronome App Screenshot">
+                            <h3>Metronome &amp; Tuner</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>A simple and easy-to-use metronome and tuner for musicians, available on the App Store.</p>
+                        </div>
+                    </a>
+                    <a href="https://mymovieadvisor.com" class="project-card" target="_blank" rel="noopener noreferrer">
+                        <div class="card-header">
+                            <img src="https://mymovieadvisor.com/favicon.ico" alt="MyMovieAdvisor Logo">
+                            <h3>MyMovieAdvisor</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>A Movie Recommendation Website</p>
+                        </div>
+                    </a>
+                    <a href="https://github.com/Joseph-Satzl/python-adaline" class="project-card" target="_blank" rel="noopener noreferrer">
+                        <div class="card-header">
+                            <img src="1.png" alt="Developer Logo">
+                            <h3>Adaline Neural Network</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>An Adaline Neural Network trained on the Pima Indian dataset.</p>
+                        </div>
+                    </a>
+                    <a href="https://apps.apple.com/us/app/peezy-toilet-finder/id6752252500" class="project-card" target="_blank" rel="noopener noreferrer">
+                        <div class="card-header">
+                            <img src="Toilet-Finder-Icon.png" alt="Developer Logo">
+                            <h3>Toilet Finder</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>A toilet finder app, available on the App Store.</p>
+                        </div>
+                    </a>
+                </div>
+            </main>
+        </div>
+
+        <script>
+            const navLinks = document.querySelectorAll("nav a");
+            navLinks.forEach((link) => {
+                link.addEventListener("click", (event) => {
+                    if (link.classList.contains("active")) return;
+                    event.preventDefault();
+                    document.body.classList.add("is-leaving");
+                    setTimeout(() => {
+                        window.location.href = link.href;
+                    }, 300);
+                });
+            });
+        </script>
     </body>
 </html>
