@@ -164,8 +164,8 @@ strong {
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.75rem;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 2fr));
+    gap: 1.5rem;
 }
 
 .project-card {
@@ -194,6 +194,7 @@ strong {
 .project-card:nth-child(4) { animation-delay: 0.2s; }
 .project-card:nth-child(5) { animation-delay: 0.25s; }
 .project-card:nth-child(6) { animation-delay: 0.3s; }
+.project-card:nth-child(7) { animation-delay: 0.35s; }
 
 
 .card-header {
@@ -275,7 +276,7 @@ strong {
 
 @media (max-width: 720px) {
     .page-shell {
-        padding: 2.5rem 1.25rem 3rem;
+        padding: 2.5rem 1.25rem 2rem;
     }
 
     .hero {
