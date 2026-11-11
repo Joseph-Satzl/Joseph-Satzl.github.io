@@ -3,43 +3,83 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Joseph Satzl - Developer</title>
-        <meta name="description" content="Welcome to the personal website of Joseph Satzl, a passionate developer specializing in web, mobile, and AI development. Explore his projects, including Reywa, Alpha Patch, Metronome & Tuner, MyMovieAdvisor, Adaline Neural Network, and Toilet Finder. Learn more about his skills, experience, and how to get in touch.">
-        <meta name="keywords" content="Joseph Satzl, software, developer, web development, mobile development, AI development, projects, software, Reywa, Alpha Patch, Metronome & Tuner, MyMovieAdvisor, Adaline Neural Network, Toilet Finder">
+        <title>Joseph Satzl — Developer</title>
+        <meta name="description" content="Joseph Satzl is a student and developer building web, mobile, and AI projects.">
+        <meta name="theme-color" content="#f5f7f3">
         <link rel="stylesheet" href="style.css">
-        <link rel="icon" type="image" src="1.png">
+        <link rel="icon" href="1.png" type="image/png">
         <script defer src="https://cloud.umami.is/script.js" data-website-id="fb235f03-e7dc-4f67-82e5-a05ecf28dccd"></script>
     </head>
     <body class="page">
         <div class="page-shell">
-            <header class="hero">
-                <div>
-                    <h1>Joseph Satzl</h1>
-                    <p class="subtitle">Developer Site &amp; Projects</p>
-                </div>
+            <header class="site-header">
+                <a class="site-brand" href="index.html" aria-label="Joseph Satzl home"><span class="brand-mark">JS</span><span class="brand-name">Joseph Satzl <small>Developer</small></span></a>
+                <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html" class="active" aria-current="page">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                </nav>
             </header>
 
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">About Me</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                </ul>
-            </nav>
-
             <main class="content">
-                <h2 class="section-title">About Me</h2>
+                <section class="intro" aria-labelledby="intro-title">
+                    <div class="intro-copy">
+                        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Student developer</p>
+                        <h1 id="intro-title">Ideas into<br><span>useful software.</span></h1>
+                        <p class="lead">I’m Joseph, a student developer building useful products for <strong>web</strong>, <strong>mobile</strong>, and <strong>AI</strong>.</p>
+                        <div class="intro-actions">
+                            <a class="button-link" href="projects.html">Explore projects <span aria-hidden="true">↗</span></a>
+                        </div>
+                    </div>
+                    <div class="intro-visual" aria-hidden="true">
+                        <div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div>
+                        <div class="visual-core"><img src="2.png" alt=""></div>
+                        <span class="visual-tag tag-web">WEB</span><span class="visual-tag tag-mobile">MOBILE</span><span class="visual-tag tag-ai">AI / DATA</span>
+                        <span class="visual-caption">Curiosity, made tangible.</span>
+                    </div>
+                </section>
 
-                <div class="about-card">
-                    <p class="lead">Hi, I’m Joseph - a student and developer who loves turning ideas into useful, creative software. My focus is on <strong>web</strong>, <strong>mobile</strong>, and <strong>AI development</strong>, and I’m always experimenting with new technologies to push my skills further.</p>
-                </div>
+                <section class="contact-section" id="contact" aria-labelledby="contact-title">
+                    <div class="contact-intro">
+                        <p class="eyebrow">Get in touch</p>
+                        <h2 id="contact-title">Have something to say?</h2>
+                        <p>Send me a note. I’d be glad to hear from you.</p>
+                        <a class="contact-email" href="mailto:josephsatzl@gmail.com">josephsatzl@gmail.com</a>
+                    </div>
+                    <form class="contact-form" id="contact-form" action="mailto:josephsatzl@gmail.com" method="post" enctype="text/plain">
+                        <label for="contact-name">Name</label>
+                        <input id="contact-name" name="name" type="text" autocomplete="name" required maxlength="100">
+                        <label for="contact-email">Email</label>
+                        <input id="contact-email" name="email" type="email" autocomplete="email" required maxlength="254">
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" name="message" rows="4" required maxlength="5000"></textarea>
+                        <button class="button-link contact-submit" type="submit">Open email draft <span aria-hidden="true">↗</span></button>
+                        <p class="form-note">Your email app will open. The message is sent only when you press Send.</p>
+                    </form>
+                </section>
             </main>
         </div>
 
         <script>
+            const contactForm = document.querySelector("#contact-form");
+            contactForm.addEventListener("submit", (event) => {
+                event.preventDefault();
+                const formData = new FormData(contactForm);
+                const name = formData.get("name").trim();
+                const email = formData.get("email").trim();
+                const message = formData.get("message").trim();
+                const subject = encodeURIComponent(`Website message from ${name}`);
+                const body = encodeURIComponent(`${message}\n\nFrom: ${name}\nEmail: ${email}`);
+                window.location.href = `mailto:josephsatzl@gmail.com?subject=${subject}&body=${body}`;
+            });
+
             const navLinks = document.querySelectorAll("nav a");
             navLinks.forEach((link) => {
                 link.addEventListener("click", (event) => {
-                    if (link.classList.contains("active")) return;
+                    const destination = new URL(link.href);
+                    if (link.classList.contains("active") || (destination.pathname === window.location.pathname && destination.hash) || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
                     event.preventDefault();
                     document.body.classList.add("is-leaving");
                     setTimeout(() => {

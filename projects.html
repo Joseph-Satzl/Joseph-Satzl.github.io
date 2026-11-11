@@ -3,105 +3,106 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Joseph Satzl - Developer</title>
-        <meta name="description" content="Portfolio of Joseph Satzl, a developer specializing in web, mobile, and AI development. Explore his projects, including Reywa, Alpha Patch, Metronome & Tuner, MyMovieAdvisor, Adaline Neural Network, and Toilet Finder.">
-        <meta name="keywords" content="Joseph Satzl, developer, web development, mobile development, AI development, projects, software, Reywa, Alpha Patch, Metronome & Tuner, MyMovieAdvisor, Adaline Neural Network, Toilet Finder">
+        <title>Projects — Joseph Satzl</title>
+        <meta name="description" content="A selection of web, mobile, AI, and data projects by Joseph Satzl.">
+        <meta name="theme-color" content="#f5f7f3">
         <link rel="stylesheet" href="style.css">
-        <link rel="icon" type="image" src="1.png">
+        <link rel="icon" href="1.png" type="image/png">
     </head>
     <body class="page">
         <div class="page-shell">
-            <header class="hero">
-                <div>
-                    <h1>Joseph Satzl</h1>
-                    <p class="subtitle">Developer Site &amp; Projects</p>
-                </div>
+            <header class="site-header">
+                <a class="site-brand" href="index.html" aria-label="Joseph Satzl home"><span class="brand-mark">JS</span><span class="brand-name">Joseph Satzl <small>Developer</small></span></a>
+                <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">About</a></li>
+                    <li><a href="projects.html" class="active" aria-current="page">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                </nav>
             </header>
 
-            <nav>
-                <ul>
-                    <li><a href="index.html">About Me</a></li>
-                    <li><a href="projects.html" class="active">Projects</a></li>
-                </ul>
-            </nav>
-
             <main class="content">
-                <h2 class="section-title">Projects</h2>
+                <div class="section-heading">
+                    <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Selected work</p>
+                    <h1 class="section-title">Projects<span class="title-period">.</span></h1>
+                    <p class="section-description">Apps, websites, and experiments I’ve built.</p>
+                </div>
     
-                <div class="project-grid">
+                <div class="project-grid" id="work">
                     <a href="https://www.reywa.co" class="project-card" target="_blank" rel="noopener noreferrer">
                         <div class="card-header">
-                            <img src="Reywa_Logo.png" alt="Reywa Logo">
+                            <img src="Reywa_Logo.png" alt="" aria-hidden="true">
                             <h3>Reywa</h3>
                             <div class="badge">Website</div>
                         </div>
                         <div class="card-content">
-                            <p>A smart global price and product comparison platform.</p>
+                            <p>Global product and price comparison.</p>
                         </div>
                     </a>
                     <a href="https://apps.apple.com/de/app/metronome-tuner/id6748554438?l=en-GB" class="project-card" target="_blank" rel="noopener noreferrer">
                         <div class="card-header">
-                            <img src="metronome-and-tuner.png" alt="Metronome App Screenshot">
+                            <img src="metronome-and-tuner.png" alt="" aria-hidden="true">
                             <h3>Metronome &amp; Tuner</h3>
                             <div class="badge">Mobile App</div>
                         </div>
                         <div class="card-content">
-                            <p>A simple and easy-to-use metronome and tuner for musicians, available on the App Store.</p>
+                            <p>A metronome and tuner for musicians.</p>
                         </div>
                     </a>
                     <a href="https://mymovieadvisor.com" class="project-card" target="_blank" rel="noopener noreferrer">
                         <div class="card-header">
-                            <img src="https://mymovieadvisor.com/favicon.ico" alt="MyMovieAdvisor Logo">
+                            <img src="1.png" alt="" aria-hidden="true">
                             <h3>MyMovieAdvisor</h3>
                             <div class="badge">Website</div>
                         </div>
                         <div class="card-content">
-                            <p>A Movie Recommendation Website</p>
+                            <p>A movie recommendation website.</p>
                         </div>
                     </a>
                     <a href="https://ballot360.vercel.app" class="project-card" target="_blank" rel="noopener noreferrer">
                         <div class="card-header">
-                            <img src="https://ballot360.vercel.app/favicon.ico" alt="Ballot 360 Logo">
+                            <img src="1.png" alt="" aria-hidden="true">
                             <h3>Ballot360</h3>
                             <div class="badge">Website</div>
                         </div>
                         <div class="card-content">
-                            <p>Election decision Quiz</p>
+                            <p>An election decision quiz.</p>
                         </div>
                     </a>
-                    <a href="https://kaggle.com" class="project-card" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.kaggle.com/search?q=Predicting%20the%20FIFA%20World%20Cup" class="project-card" target="_blank" rel="noopener noreferrer">
                         <div class="card-header">
-                            <img src="FIFA-World-Cup-2026.jpg" alt="World Cup 2026 Logo">
+                            <img src="FIFA-World-Cup-2026.jpg" alt="" aria-hidden="true">
                             <h3>Predicting the FIFA World Cup</h3>
                             <div class="badge">Data Science</div>
                         </div>
                         <div class="card-content">
-                            <p>Model to predict the winner of the 2026 FIFA World Cup.</p>
+                            <p>Predicting the 2026 FIFA World Cup winner.</p>
                         </div>
                     </a>
                     <a href="https://github.com/AlphaPatchAI/AlphaPatch" class="project-card" target="_blank" rel="noopener noreferrer">
                         <div class="card-header">
-                            <img src="alpha-patch-logo.png" alt="Alpha Patch Logo">
+                            <img src="alpha-patch-logo.png" alt="" aria-hidden="true">
                             <h3>Alpha Patch</h3>
                             <div class="badge">AI</div>
                         </div>
                         <div class="card-content">
-                            <p>AI-powered GitHub assistant that analyzes issues and proposes code fixes automatically.</p>
+                            <p>AI assistant that reviews GitHub issues and proposes fixes.</p>
                         </div>
                     </a>
                     <a href="https://apps.apple.com/us/app/peezy-toilet-finder/id6752252500" class="project-card" target="_blank" rel="noopener noreferrer">
                         <div class="card-header">
-                            <img src="Toilet-Finder-Icon.png" alt="Developer Logo">
+                            <img src="Toilet-Finder-Icon.png" alt="" aria-hidden="true">
                             <h3>Toilet Finder</h3>
                             <div class="badge">Mobile App</div>
                         </div>
                         <div class="card-content">
-                            <p>A toilet finder app, available on the App Store.</p>
+                            <p>A toilet finder app for iPhone.</p>
                         </div>
                     </a>
                     <a href="https://github.com/Joseph-Satzl/python-adaline" class="project-card" target="_blank" rel="noopener noreferrer">
                         <div class="card-header">
-                            <img src="1.png" alt="Developer Logo">
+                            <img src="1.png" alt="" aria-hidden="true">
                             <h3>Adaline Neural Network</h3>
                             <div class="badge">Python</div>
                         </div>
@@ -117,7 +118,8 @@
             const navLinks = document.querySelectorAll("nav a");
             navLinks.forEach((link) => {
                 link.addEventListener("click", (event) => {
-                    if (link.classList.contains("active")) return;
+                    const destination = new URL(link.href);
+                    if (link.classList.contains("active") || (destination.pathname === window.location.pathname && destination.hash) || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
                     event.preventDefault();
                     document.body.classList.add("is-leaving");
                     setTimeout(() => {
