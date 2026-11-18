@@ -143,7 +143,7 @@ strong { color: var(--accent-dark); }
 .project-card:nth-child(7) { animation-delay: .28s; }
 .project-card:nth-child(8) { animation-delay: .32s; }
 .card-header { display: flex; align-items: center; gap: 1rem; padding: 1.25rem 1.35rem 1rem; border-bottom: 1px solid var(--line); }
-.card-header img { flex: 0 0 58px; width: 58px; height: 58px; padding: 5px; object-fit: contain; border-radius: 15px; background: #f1f0ec; }
+.card-header img { flex: 0 0 58px; width: 58px; height: 58px; padding: 5px; object-fit: contain; border-radius: 15px; background: #ffffff; }
 .card-header h3 { min-width: 0; margin: 0; font-size: 1.04rem; line-height: 1.3; }
 .badge { margin-left: auto; padding: .32rem .65rem; border-radius: 999px; color: var(--accent-dark); background: var(--accent-soft); font-size: .72rem; font-weight: 700; white-space: nowrap; }
 .card-content { flex: 1; padding: 1rem 1.35rem 1.35rem; }
@@ -225,12 +225,16 @@ body::before { background: radial-gradient(ellipse at 88% 4%, rgba(134, 197, 152
 .section-description { max-width: 560px; font-size: 1rem; }
 .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .9rem; }
 .project-card { border-radius: 16px; box-shadow: 0 6px 20px rgba(23,42,31,.04); }
-.project-card:first-child { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; align-items: center; min-height: 195px; border-color: #cbdccd; background: linear-gradient(115deg, #fff 0%, #f0f7ed 100%); }
-.project-card:first-child .card-header { border: 0; padding: 1.5rem 2rem; }
-.project-card:first-child .card-header img { width: 84px; height: 84px; flex-basis: 84px; border-radius: 22px; }
-.project-card:first-child .card-header h3 { font: 500 1.8rem "Crimson Pro", Georgia, serif; }
-.project-card:first-child .card-content { padding: 1.5rem 2rem; border-left: 1px solid var(--line); }
-.project-card:first-child .card-content p { font-size: 1rem; }
+.project-card:first-child:not(.is-archived) { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; align-items: center; min-height: 195px; border-color: #cbdccd; background: linear-gradient(115deg, #fff 0%, #f0f7ed 100%); }
+.project-card:first-child:not(.is-archived) .card-header { border: 0; padding: 1.5rem 2rem; }
+.project-card:first-child:not(.is-archived) .card-header img { width: 84px; height: 84px; flex-basis: 84px; border-radius: 22px; }
+.project-card:first-child:not(.is-archived) .card-header h3 { font: 500 1.8rem "Crimson Pro", Georgia, serif; }
+.project-card:first-child:not(.is-archived) .card-content { padding: 1.5rem 2rem; border-left: 1px solid var(--line); }
+.project-card:first-child:not(.is-archived) .card-content p { font-size: 1rem; }
+.is-archived { cursor: default; }
+.is-archived:hover { transform: none; border-color: var(--line); box-shadow: 0 6px 20px rgba(23,42,31,.04); }
+.is-archived .card-header img { filter: grayscale(1); }
+.badge-muted { color: #59635d; background: #edf0ed; }
 .card-header { gap: .85rem; padding: 1.05rem 1.15rem .85rem; }
 .card-header img { width: 52px; height: 52px; flex-basis: 52px; border-radius: 13px; }
 .badge { padding: .34rem .58rem; font-size: .66rem; }
@@ -243,9 +247,9 @@ body::before { background: radial-gradient(ellipse at 88% 4%, rgba(134, 197, 152
     .intro { grid-template-columns: 1fr; min-height: auto; padding: clamp(1.6rem, 7vw, 3rem); }
     .intro-visual { width: min(78%, 280px); margin: 1rem auto -1rem; justify-self: center; }
     .visual-core { width: 100px; height: 100px; font-size: 2.4rem; }
-    .project-card:first-child { grid-template-columns: 1fr; }
-    .project-card:first-child .card-header { padding: 1.2rem 1.25rem .8rem; }
-    .project-card:first-child .card-content { border-left: 0; border-top: 1px solid var(--line); padding: 1rem 1.25rem 1.25rem; }
+    .project-card:first-child:not(.is-archived) { grid-template-columns: 1fr; }
+    .project-card:first-child:not(.is-archived) .card-header { padding: 1.2rem 1.25rem .8rem; }
+    .project-card:first-child:not(.is-archived) .card-content { border-left: 0; border-top: 1px solid var(--line); padding: 1rem 1.25rem 1.25rem; }
 }
 @media (max-width: 460px) {
     .brand-name { font-size: .8rem; }
